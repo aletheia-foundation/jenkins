@@ -19,3 +19,23 @@ sudo su /home/jenkins-deployer
     cat ~/.ssh/id_rsa
 
 ```
+
+
+The last line outputs an ssh key e.g.
+
+ ```
+-----BEGIN RSA PRIVATE KEY-----
+...
+...
+...
+-----END RSA PRIVATE KEY-----
+
+```
+Copy the key into the jenkins configuration section:
+
+[jenkins configuration -> publish over ssh  -> key ](https://aletheia-infrastructure.org/configure#section72)
+
+Fill in the other deployment details as per [ssh plugin docs](https://wiki.jenkins.io/display/JENKINS/Publish+Over+SSH+Plugin)
+
+and click "Test Configuration", this should succeed.
+
