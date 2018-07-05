@@ -9,3 +9,4 @@ sudo certbot certonly --nginx --agree-tos -n -d jenkins.aletheia-foundation.org 
 # backup nginx keys!
 
 # then copy the nginx config from nginx folder
+sudo systemctl restart nginx.service
