@@ -1,0 +1,22 @@
+server {
+    listen 443 ssl;
+    server_name jenkins.aletheia-infrastructure.org;
+
+    ssl_certificate /etc/letsencrypt/live/jenkins.aletheia-infrastructure.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/jenkins.aletheia-infrastructure.org/privkey.pem; # managed by Certbot
+
+    include common.conf;
+
+    location / {
+
+        include proxy-headers.conf;
+
+        # Fix the “It appears that your reverse proxy set up is broken" error.
+        proxy_pass          http://localhost:8080;
+        proxy_read_timeout  90;
+
+        proxy_redirect      http://localhost:8080 https://jenkin.aletheia-infrastructure.org;
+
+    }
+
+}

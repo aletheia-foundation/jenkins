@@ -1,6 +1,11 @@
 hosted on a debian server
 `install.sh` installed the server
-
+## setup ufw firewall
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04
+https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands
+Enable UFW
+Copy user.rules.backup into `/etc/ufw/user.rules`
+run `ufw reload`
 
 ## Add a jenkins deployment user
 On the boxes that jenkins will be deploying to, create a deployment user 
